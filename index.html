@@ -138,4 +138,131 @@
         }
 
         .service-card h3 {
-            color: var(--secondary
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            background-color: var(--primary);
+            color: white;
+            max-width: 600px;
+            margin: 2.5rem auto 0 auto;
+            padding: 2.5rem;
+            border-radius: 8px;
+        }
+
+        .contact-info h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050B14;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            header { flex-direction: column; text-align: center; }
+            nav { margin-top: 1rem; }
+            nav a { margin: 0 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Phaeton<span>Trucking</span></a>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="https://app.phaetontrucking.com" target="_blank">Client App</a>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+        <h1>Phaeton Trucking Services</h1>
+        <p>Your trusted partner in logistics, moving the heavy loads today so you can build a stronger business tomorrow.</p>
+        <a href="#contact" class="btn">Book a Shipment</a>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Core Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Point-to-Point Pickup & Drop-off</h3>
+                <p>Reliable point-to-point and LTL goods transportation handled by professionals. We ensure your items get where they need to be, safely and on schedule.</p>
+            </div>
+            <div class="service-card">
+                <h3>Freight Trucking</h3>
+                <p>Efficient logistics management for larger shipments. Dependable moving solutions tailored specifically to fit your business scaling needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Real-Time Fleet GPS</h3>
+                <p>Transparency at every mile. We utilize live tracking options so you always know where your cargo is located during transit.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>Have questions or need to schedule a haul? Our team is standing by.</p>
+        
+        <div class="contact-info">
+            <h3>Phaeton Trucking</h3>
+            <p>San Pedro, Laguna, Philippines</p>
+            <p>Speak with a representative directly:</p>
+            <p><a href="tel:+639360552674">+63 936 055 2674</a></p>
+            <p><a href="tel:+639157769841">+63 915 776 9841</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Phaeton Trucking Services. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
