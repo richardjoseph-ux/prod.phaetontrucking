@@ -10859,3 +10859,9 @@ html {
         width: 80%; 
     }
 }
+
+.custom-gray-section {
+    background-color: #f4f5f7 !important; /* Soft custom gray */
+    border-top: 1px solid #e1e4e8;
+    border-bottom: 1px solid #e1e4e8;
+}
