@@ -1,20 +1,16 @@
 # CloudCannon Configuration
-# Tells CloudCannon to let you visually edit plain HTML files
-
 paths:
-  uploads: assets # Stores your uploaded photos in the assets folder
+  uploads: assets
 
-# Force the visual editor to work on standard HTML files
+# Force Content Editor on all HTML files
 collections_config:
   pages:
     path: /
-    parser: html
     output: true
     filter:
       base_ext:
         - .html
 
-# Enable the WYSIWYG editor
 _enabled_editors:
-  - visual
   - content
+  - source
