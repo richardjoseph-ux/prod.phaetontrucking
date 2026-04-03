@@ -3,37 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phaeton Trucking Services | Reliable Logistics</title>
+    <title>Phaeton Trucking Services | Tech-Driven Logistics</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-   <header>
+    <header>
         <div class="container navbar">
             <div class="logo">
                 <a href="#home">
-                    <img src="image_0.png" alt="Phaeton Trucking Services Logo">
+                    <img src="logo.jpg" alt="Phaeton Trucking Services Logo">
                 </a>
             </div>
-            <nav>
+            <nav id="nav-menu">
                 <ul>
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#tracker">Live Tracker</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#quote">Quote Calculator</a></li>
                     <li><a href="#contact" class="btn-nav">Contact Us</a></li>
                 </ul>
             </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </header>
 
     <section id="home" class="hero">
         <div class="container hero-content">
-            <h2>Fast, Safe, and Reliable Logistics Solutions</h2>
-            <p>We provide top-tier freight and tracking solutions to move your business forward. Tracked, secured, and delivered on time.</p>
+            <h2>Moving Your Business Forward with Smart Logistics</h2>
+            <p>From our hubs in San Pedro, Laguna and Singapore, we combine raw transport power with real-time tracking intelligence.</p>
             <div class="hero-btns">
-                <a href="#services" class="btn-primary">Our Services</a>
-                <a href="#contact" class="btn-secondary">Get a Quote</a>
+                <a href="#tracker" class="btn-primary">Track a Shipment</a>
+                <a href="#quote" class="btn-secondary">Estimate Cost</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tracker" class="interactive-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Phaeton Live Tracker</h2>
+                <p>Simulate how our proprietary real-time tracking network monitors your cargo.</p>
+            </div>
+            
+            <div class="tracker-box">
+                <div class="input-group">
+                    <label for="dr-number">Enter Delivery Receipt (DR) Number:</label>
+                    <input type="text" id="dr-number" placeholder="e.g., DR-2026-X">
+                    <button class="btn-primary" onclick="simulateTracking()">Track Now</button>
+                </div>
+                <div class="tracker-display" id="tracker-result">
+                    <p><i class="fa-solid fa-circle-info"></i> Enter a DR number above to see live status.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -42,24 +66,38 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
-                <p>Tailored logistics solutions designed to meet your supply chain needs.</p>
+                <p>Tailored logistics solutions spanning the Philippines and Singapore.</p>
             </div>
-            
             <div class="services-grid">
                 <div class="service-card">
                     <i class="fa-solid fa-truck-moving"></i>
                     <h3>Freight Trucking</h3>
-                    <p>Reliable point-to-point full truckload and LTL goods transportation.</p>
+                    <p>Reliable point-to-point and LTL goods transportation handled by professionals.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fa-solid fa-boxes-stacked"></i>
-                    <h3>Warehousing</h3>
-                    <p>Secure storage environments with optimized inventory management.</p>
+                    <i class="fa-solid fa-satellite-dish"></i>
+                    <h3>Real-Time Fleet GPS</h3>
+                    <p>Proprietary software to keep an eye on your high-value cargo at every turn.</p>
                 </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                    <h3>Real-Time Tracking</h3>
-                    <p>Advanced tracking logistics so you always know where your cargo is.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote" class="interactive-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Instant Cost Estimator</h2>
+                <p>Slide to estimate the cost of your delivery shipment based on distance.</p>
+            </div>
+            
+            <div class="calculator-box">
+                <div class="slider-container">
+                    <label for="distance">Estimated Distance: <span id="distance-val">100</span> km</label>
+                    <input type="range" id="distance" min="10" max="1000" value="100" class="slider" oninput="calculatePrice()">
+                </div>
+                <div class="price-display">
+                    <h3>Estimated Quote: <span id="price-val">₱5,000</span></h3>
+                    <p>*(This is an estimate. Final rates may vary based on cargo volume).*</p>
                 </div>
             </div>
         </div>
@@ -68,14 +106,14 @@
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-about">
+                <div>
                     <h3>PHAETON TRUCKING</h3>
-                    <p>Moving your cargo safely across regions with cutting-edge tracking and top-tier infrastructure.</p>
+                    <p>Secured. Tracked. Delivered.</p>
                 </div>
-                <div class="footer-contact">
+                <div>
                     <h3>Contact Us</h3>
-                    <p><i class="fa-solid fa-envelope"></i> info@phaetontrucking.com</p>
                     <p><i class="fa-solid fa-location-dot"></i> San Pedro, Laguna, Philippines</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@phaetontrucking.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -84,5 +122,51 @@
         </div>
     </footer>
 
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // 2. Tracker Simulator
+        function simulateTracking() {
+            const drInput = document.getElementById('dr-number').value;
+            const display = document.getElementById('tracker-result');
+            
+            if (drInput.trim() === "") {
+                display.innerHTML = `<p style="color: #ff4d4d;"><i class="fa-solid fa-triangle-exclamation"></i> Please enter a valid DR number.</p>`;
+                return;
+            }
+            
+            display.innerHTML = `<p><i class="fa-solid fa-spinner fa-spin"></i> Querying Phaeton database for ${drInput}...</p>`;
+            
+            setTimeout(() => {
+                display.innerHTML = `
+                    <div class="status-success">
+                        <h4><i class="fa-solid fa-circle-check"></i> Found Shipment: ${drInput}</h4>
+                        <p><strong>Status:</strong> En Route</p>
+                        <p><strong>Current Hub:</strong> San Pedro Terminal</p>
+                        <p><strong>Security Level:</strong> Encrypted & Active</p>
+                    </div>
+                `;
+            }, 1500);
+        }
+
+        // 3. Dynamic Quote Calculator
+        function calculatePrice() {
+            const distance = document.getElementById('distance').value;
+            document.getElementById('distance-val').innerText = distance;
+            
+            // Base calculation: ₱1500 base + ₱35 per km
+            const price = 1500 + (distance * 35);
+            
+            // Format to currency
+            const formattedPrice = "₱" + price.toLocaleString();
+            document.getElementById('price-val').innerText = formattedPrice;
+        }
+    </script>
 </body>
 </html>
