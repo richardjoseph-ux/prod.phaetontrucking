@@ -31,16 +31,16 @@
                     <div class="row gx-5 align-items-center justify-content-center">
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
-                                <h1 class="display-5 fw-bolder text-white mb-2" class="editable">Phaeton Trucking Services</h1>
-                                <p class="lead fw-normal text-white-50 mb-4" class="editable">Your trusted partner in logistics, moving the heavy loads today so you can build a stronger business tomorrow.</p>
+                                <h1 id="heroSlogan" class="display-5 fw-bolder text-white mb-2">Phaeton Trucking Services</h1>
+                                <p id="heroDesc" class="lead fw-normal text-white-50 mb-4">Your trusted partner in logistics, moving the heavy loads today so you can build a stronger business tomorrow.</p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                     <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#contact">Book a Shipment</a>
                                     <a class="btn btn-outline-light btn-lg px-4" href="https://app.phaetontrucking.com">Live Tracker</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center" class="editable">
-                            <img class="img-fluid rounded-3 my-5" src="https://img1.wsimg.com/isteam/getty/1412694879" alt="Phaeton Trucking" />
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                            <img id="heroImg" class="img-fluid rounded-3 my-5" src="https://img1.wsimg.com/isteam/getty/1412694879" alt="Phaeton Trucking" />
                         </div>
                     </div>
                 </div>
@@ -48,25 +48,25 @@
             <section class="py-5" id="features">
                 <div class="container px-5 my-5">
                     <div class="row gx-5">
-                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0" class="editable">Moving the heavy loads today.</h2></div>
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Moving the heavy loads today.</h2></div>
                         <div class="col-lg-8">
                             <div class="row gx-5 row-cols-1 row-cols-md-2">
-                                <div class="col mb-5 h-100" class="editable">
+                                <div class="col mb-5 h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
                                     <h2 class="h5">Point-to-Point Pickup and Drop-off</h2>
                                     <p class="mb-0">Reliable point-to-point and LTL goods transportation handled by professionals.</p>
                                 </div>
-                                <div class="col mb-5 h-100" class="editable">
+                                <div class="col mb-5 h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
                                     <h2 class="h5">Freight Trucking</h2>
                                     <p class="mb-0">Efficient logistics management for larger shipments moving across regions.</p>
                                 </div>
-                                <div class="col mb-5 mb-md-0 h-100" class="editable">
+                                <div class="col mb-5 mb-md-0 h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
                                     <h2 class="h5">Real-Time Fleet GPS</h2>
                                     <p class="mb-0">Transparency at every mile. Track exactly where your cargo is located during transit.</p>
                                 </div>
-                                <div class="col h-100" class="editable">
+                                <div class="col h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
                                     <h2 class="h5">Trusted Logistics</h2>
                                     <p class="mb-0">Building a stronger business tomorrow with dependable daily operations.</p>
@@ -80,11 +80,13 @@
             <section id="contact" class="py-5 bg-light">
                 <div class="container px-5 my-5">
                     <div class="text-center">
-                        <h2 class="fw-bolder" class="editable">Phaeton Trucking</h2>
-                        <p class="lead fw-normal text-muted mb-5" class="editable">San Pedro, Laguna, Philippines</p>
-                        <div class="fs-4 mb-4" class="editable">
+                        <h2 class="fw-bolder">Phaeton Trucking</h2>
+                        <p class="lead fw-normal text-muted mb-5">San Pedro, Laguna, Philippines</p>
+                        <div class="fs-4 mb-4">
                             Speak with a representative directly: <br>
-                            <strong>+63 936 055 2674</strong> or <strong>+63 915 776 9841</strong>
+                            <div id="phoneDisplay">
+                                <strong>+63 936 055 2674</strong> or <strong>+63 915 776 9841</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,8 +95,61 @@
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white" class="editable">Copyright &copy; Phaeton Trucking Services 2026</div></div>
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Phaeton Trucking Services 2026</div></div>
                     <div class="col-auto">
                         <a class="link-light small" href="#!">Privacy</a>
                         <span class="text-white mx-1">&middot;</span>
                         <a class="link-light small" href="#!">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+        <script>
+            // 1. Your actual Firebase Configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyCQ8itFjAEn30dSLlfqddwTK0Hpwb7WZm8",
+                authDomain: "phaeton-website.firebaseapp.com",
+                projectId: "phaeton-website",
+                storageBucket: "phaeton-website.firebasestorage.app",
+                messagingSenderId: "515093174769",
+                appId: "1:515093174769:web:996ca58272149986344c50"
+            };
+
+            // 2. Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+
+            // 3. Listen for changes in the database and instantly update the screen
+            db.collection("website_content").doc("landing_page")
+                .onSnapshot((doc) => {
+                    if (doc.exists) {
+                        const data = doc.data();
+                        
+                        // Update Slogan
+                        if (data.hero_slogan) {
+                            document.getElementById('heroSlogan').innerText = data.hero_slogan;
+                        }
+                        
+                        // Update Description
+                        if (data.hero_desc) {
+                            document.getElementById('heroDesc').innerText = data.hero_desc;
+                        }
+                        
+                        // Update Image
+                        if (data.hero_img) {
+                            document.getElementById('heroImg').src = data.hero_img;
+                        }
+
+                        // Update Phones
+                        if (data.phone_1 && data.phone_2) {
+                            document.getElementById('phoneDisplay').innerHTML = `<strong>${data.phone_1}</strong> or <strong>${data.phone_2}</strong>`;
+                        }
+                    }
+                });
+        </script>
+    </body>
+</html>
