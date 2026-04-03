@@ -33,15 +33,21 @@ header {
     padding: 20px 0;
 }
 
-.logo h1 {
-    font-size: 24px;
-    color: #1a2a6c;
+/* *** Updated Logo Styles *** */
+
+.logo a {
+    text-decoration: none;
+    display: flex; /* Ensures image centers properly */
+    align-items: center;
 }
 
-.logo span {
-    color: #f5af19;
+.logo img {
+    height: 60px; /* Adjust this number to scale your logo up or down! */
+    width: auto; /* Maintains the aspect ratio */
+    display: block; /* Prevents alignment issues */
+    /* Optional: Small box-shadow for pop */
+    /* filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.2)); */
 }
-
 nav ul {
     display: flex;
     list-style: none;
