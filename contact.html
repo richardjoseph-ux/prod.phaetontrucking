@@ -22,20 +22,6 @@
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                    <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
-                                    <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                    <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
-                                    <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -63,7 +49,7 @@
                                 <i class="bi bi-exclamation-triangle-fill me-2"></i> Oops! There was a problem submitting your form.
                             </div>
                             
-                            <form action="https://formspree.io/f/xdapwoln" method="POST" id="contactForm">
+                            <form action="https://formspree.io/f/xdapwoln" method="POST" id="customContactForm">
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
                                     <label for="name">Full name</label>
@@ -131,49 +117,45 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <script>
-            const form = document.getElementById('contactForm');
+            // We changed the form ID to make absolutely sure no other scripts find it
+            const customForm = document.getElementById('customContactForm');
             const successAlert = document.getElementById('successAlert');
             const errorAlert = document.getElementById('errorAlert');
-            const submitButton = document.getElementById('submitButton');
+            const submitBtn = document.getElementById('submitButton');
 
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault(); // Stop the form from reloading the page
+            customForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // This is the hard stop line that prevents a page reload
                 
-                // Reset alerts
                 successAlert.classList.add('d-none');
                 errorAlert.classList.add('d-none');
                 
-                // Disable button so they don't click it twice
-                submitButton.disabled = true;
-                submitButton.innerText = "Sending...";
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Sending...";
 
-                const formData = new FormData(form);
+                const data = new FormData(customForm);
 
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
+                fetch(customForm.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
                     if (response.ok) {
-                        // Show success alert
                         successAlert.classList.remove('d-none');
-                        form.reset(); // Clear the form
+                        customForm.reset(); 
                     } else {
-                        // Show error alert if Formspree rejects it
                         errorAlert.classList.remove('d-none');
                     }
-                } catch (error) {
-                    // Show error alert if network fails
+                })
+                .catch(error => {
                     errorAlert.classList.remove('d-none');
-                } finally {
-                    // Reset the button
-                    submitButton.disabled = false;
-                    submitButton.innerText = "Send";
-                }
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "Send";
+                });
             });
         </script>
     </body>
