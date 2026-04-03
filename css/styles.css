@@ -10846,3 +10846,16 @@ html {
   background-repeat: no-repeat;
   min-height: 15rem;
 }
+/* Custom styles for team photos */
+.team-img {
+    width: 60%; /* Takes up 60% of the column on mobile */
+    aspect-ratio: 1 / 1; /* Forces a perfect square */
+    object-fit: cover; /* Prevents squishing */
+}
+
+/* On larger screens (laptops), make them perfectly sized */
+@media (min-width: 992px) {
+    .team-img {
+        width: 80%; 
+    }
+}
