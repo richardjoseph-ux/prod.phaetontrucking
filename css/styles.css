@@ -10866,18 +10866,49 @@ html {
     border-bottom: 1px solid #e1e4e8;
 }
 
-/* Custom Carousel Sizing for Phaeton Trucking */
-.phaeton-carousel-img {
-    width: 100%;
-    max-width: 600px;
-    height: 400px;
-    object-fit: cover; /* Prevents images from looking stretched or squished */
-    border-radius: 0.5rem; /* Matches Bootstrap's rounded-3 curve */
+/* Fallback Background / Shimmer Effect */
+.carousel-item {
+    background-color: #212529; /* Matches Bootstrap's dark theme */
+    background-image: linear-gradient(
+        90deg, 
+        #212529 0px, 
+        #2c3034 40px, 
+        #212529 80px
+    );
+    background-size: 250px 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 0.5rem;
 }
 
-/* Responsive adjustment for small screens (Mobile) */
+/* The animation that moves the light across the background */
+@keyframes shimmer {
+    0% {
+        background-position: -250px 0;
+    }
+    100% {
+        background-position: calc(100% + 250px) 0;
+    }
+}
+
+.phaeton-carousel-img {
+    width: 600px !important;
+    height: 400px !important;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+    
+    /* Smoothly fade in the image once it finishes loading */
+    animation: fadeIn 0.5s ease-in-out; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 @media (max-width: 768px) {
     .phaeton-carousel-img {
-        height: 250px; /* Shorter height so it fits well on phone screens */
+        width: 100% !important;
+        height: 250px !important;
     }
 }
