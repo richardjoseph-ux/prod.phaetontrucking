@@ -34,7 +34,8 @@
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
                                     <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
                                     <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
-
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -62,37 +63,26 @@
                                 <i class="bi bi-exclamation-triangle-fill me-2"></i> Oops! There was a problem submitting your form.
                             </div>
                             
-                           <form action="https://formspree.io/f/xdapwoln" method="POST" id="contactForm">
-    <div class="form-floating mb-3">
-        <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
-        <label for="name">Full name</label>
-    </div>
-    <div class="form-floating mb-3">
-        <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
-        <label for="email">Email address</label>
-    </div>
-    <div class="form-floating mb-3">
-        <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
-        <label for="message">Message</label>
-    </div>
-    <div class="d-grid">
-        <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Send</button>
-    </div>
-    <div class="text-center text-muted mt-3" style="font-size: 0.75rem;">
-        This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
-    </div>
-</form>
-
-<script>
-    const form = document.getElementById('contactForm');
-    
-    form.addEventListener('submit', function() {
-        // This executes the moment they click send
-        setTimeout(() => {
-            form.reset();
-        }, 100); // Clears the form fields a split second after clicking submit
-    });
-</script>
+                            <form action="https://formspree.io/f/xdapwoln" method="POST" id="customContactForm">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
+                                    <label for="name">Full name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
+                                    <label for="email">Email address</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Send</button>
+                                </div>
+                                <div class="text-center text-muted mt-3" style="font-size: 0.75rem;">
+                                    This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+                                </div>
+                            </form>
                         </div>
 
                         <div class="col-lg-5 mt-lg-5 pt-lg-2">
@@ -141,14 +131,13 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <script>
-            // We changed the form ID to make absolutely sure no other scripts find it
             const customForm = document.getElementById('customContactForm');
             const successAlert = document.getElementById('successAlert');
             const errorAlert = document.getElementById('errorAlert');
             const submitBtn = document.getElementById('submitButton');
 
             customForm.addEventListener('submit', function(e) {
-                e.preventDefault(); // This is the hard stop line that prevents a page reload
+                e.preventDefault(); 
                 
                 successAlert.classList.add('d-none');
                 errorAlert.classList.add('d-none');
