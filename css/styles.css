@@ -10865,3 +10865,19 @@ html {
     border-top: 1px solid #e1e4e8;
     border-bottom: 1px solid #e1e4e8;
 }
+
+/* Custom Carousel Sizing for Phaeton Trucking */
+.phaeton-carousel-img {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    object-fit: cover; /* Prevents images from looking stretched or squished */
+    border-radius: 0.5rem; /* Matches Bootstrap's rounded-3 curve */
+}
+
+/* Responsive adjustment for small screens (Mobile) */
+@media (max-width: 768px) {
+    .phaeton-carousel-img {
+        height: 250px; /* Shorter height so it fits well on phone screens */
+    }
+}
