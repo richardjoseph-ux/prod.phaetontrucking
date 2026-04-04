@@ -10892,22 +10892,16 @@ html {
 
 /* Custom Carousel Sizing for Phaeton Trucking */
 .phaeton-carousel-img {
-    width: 100% !important; /* Let it fill the column container fluidly */
-    max-width: 600px !important; /* Prevent it from growing bigger than 600px on giant screens */
-    height: 400px !important; /* Keep the height locked to look clean */
+    width: 100% !important; /* Forces the image to gracefully stretch across its half of the screen */
+    height: 400px !important; /* Perfect height for standard desktop viewing */
     object-fit: cover; 
     object-position: center; 
     border-radius: 0.5rem; 
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 /* Responsive adjustment for small screens (Mobile) */
 @media (max-width: 768px) {
     .phaeton-carousel-img {
-        height: 250px !important; /* Shorter height so it fits well on phone screens */
+        height: 250px !important; /* Shorter height so it fits beautifully on mobile without giant scrolling gaps */
     }
 }
