@@ -10935,3 +10935,13 @@ html {
 .modal-dialog {
     max-width: 800px; /* Limits how wide the popup can get on massive screens */
 }
+
+/* Custom styling to make the square Phaeton logo appear circular */
+.phaeton-logo-circle {
+    width: 220px !important;    /* Force specific width */
+    height: 220px !important;   /* Force same height to create a square box */
+    object-fit: contain;        /* Ensure entire logo is inside the box */
+    border-radius: 50% !important; /* Slice away corners into a perfect circle */
+    border: 1px solid #e1e4e8;  /* Optional thin border to define the circle */
+    background-color: transparent; /* No hidden background colors */
+}
