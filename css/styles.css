@@ -10905,3 +10905,33 @@ html {
         height: 250px !important; /* Shorter height so it fits beautifully on mobile without giant scrolling gaps */
     }
 }
+
+
+/* Smooth hover effect for announcement cards */
+.announcement-card .card-img-wrapper img {
+    transition: transform 0.4s ease;
+}
+
+.announcement-card:hover .card-img-wrapper img {
+    transform: scale(1.05); /* Slight zoom in */
+}
+
+.announcement-card {
+    transition: box-shadow 0.3s ease;
+}
+
+.announcement-card:hover {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.155) !important;
+}
+
+/* Forces the popup image to fit within the screen height on laptops */
+.lightbox-img {
+    max-height: 85vh; /* Limits height to 85% of the visible window */
+    width: auto;      /* Keeps the image aspect ratio perfect */
+    object-fit: contain;
+}
+
+/* Optional: Removes padding on the container so we have maximum space */
+.modal-dialog {
+    max-width: 800px; /* Limits how wide the popup can get on massive screens */
+}
