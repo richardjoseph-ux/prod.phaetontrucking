@@ -8,6 +8,16 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            .fb-link {
+                transition: transform 0.2s ease, color 0.2s ease;
+                display: inline-block;
+            }
+            .fb-link:hover {
+                transform: scale(1.15);
+                color: #0d42ff !important; /* Slightly brighter blue on hover */
+            }
+        </style>
     </head>
     <body class="d-flex flex-column min-vh-100">
         <main class="flex-shrink-0">
@@ -67,6 +77,14 @@
                                 <div class="text-center text-muted mt-3" style="font-size: 0.75rem;">
                                     This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
                                 </div>
+
+                                <div class="text-center mt-4 pt-2 border-top">
+                                    <p class="text-muted mb-2" style="font-size: 0.9rem;">Find us on Facebook</p>
+                                    <a href="https://www.facebook.com/phaetontrucking/" target="_blank" rel="noopener noreferrer" class="text-primary fb-link">
+                                        <i class="bi bi-facebook" style="font-size: 2.5rem;"></i>
+                                    </a>
+                                </div>
+
                             </form>
                         </div>
 
