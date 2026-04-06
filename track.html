@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Phaeton Trucking Services - Smart Logistics. Total Transparency. Zero Hassle." />
+        <meta name="author" content="" />
+        <title>Phaeton Trucking Services</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="/">Phaeton Trucking Services</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="/about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/contact-us">Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/track">Live Shipment Tracking</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container px-5 my-5">
+                <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mb-4">
+                    <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+                        <div class="mb-4 mb-xl-0">
+                            <div class="fs-3 fw-bold text-white">Track Your Shipments</div>
+                            <div class="text-white-50">Enter your tracking ID to see real-time updates.</div>
+                        </div>
+                        <div class="ms-xl-4">
+                            <div class="input-group mb-2">
+                                <input id="tracking-input" class="form-control" type="text" placeholder="Enter Tracking ID..." aria-label="Enter Tracking ID..." aria-describedby="button-newsletter" />
+                                <button class="btn btn-outline-light" id="button-newsletter" type="button">Track Now</button>
+                            </div>
+                            <div class="small text-white-50">We care about privacy, and will never share your data.</div>
+                        </div>
+                    </div>
+                </aside>
+
+                <div id="app-view-container" class="d-none">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-light">
+                            <span class="fw-bold text-dark">Live Shipment Status</span>
+                        </div>
+                        <div class="card-body p-0" style="height: 600px;">
+                            <iframe id="tracking-iframe" src="" style="width: 100%; height: 100%; border: none;"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto">
+                        <div class="small m-0 text-white">Copyright &copy; Phaeton Trucking Services 2025</div>
+                    </div>                   
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
