@@ -28,22 +28,31 @@
                 </div>
             </nav>
 
-            <div class="container px-5 my-5">
-                <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mb-4">
-                    <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
-                        <div class="mb-4 mb-xl-0">
-                            <div class="fs-3 fw-bold text-white">Track Your Shipments</div>
-                            <div class="text-white-50">Enter your tracking ID to see real-time updates.</div>
-                        </div>
-                        <div class="ms-xl-4">
-                            <div class="input-group mb-2">
-                                <input id="tracking-input" class="form-control" type="text" placeholder="Enter Tracking ID..." aria-label="Enter Tracking ID..." aria-describedby="button-newsletter" />
-                                <button class="btn btn-outline-light" id="button-newsletter" type="button">Track Now</button>
-                            </div>
-                            <div class="small text-white-50">We care about privacy, and will never share your data.</div>
-                        </div>
+<div class="container px-5 my-5">
+    <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mb-4">
+        <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+            <div class="mb-4 mb-xl-0">
+                <div class="fs-3 fw-bold text-white">Track Your Shipments</div>
+                <div class="text-white-50">Enter details to see real-time updates.</div>
+            </div>
+            
+            <div class="ms-xl-4 w-100" style="max-width: 600px;">
+                <div class="row g-2">
+                    <div class="col-md-5">
+                        <input id="trip-id-input" class="form-control" type="text" placeholder="Trip ID" aria-label="Trip ID" />
                     </div>
-                </aside>
+                    <div class="col-md-5">
+                        <input id="dr-no-input" class="form-control" type="text" placeholder="DR #" aria-label="DR #" />
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-outline-light w-100" id="button-track" type="button">Track</button>
+                    </div>
+                </div>
+                <div class="small text-white-50 mt-2">We care about privacy, and will never share your data.</div>
+            </div>
+        </div>
+    </aside>
+</div>
 
                 <div id="app-view-container" class="d-none">
                     <div class="card shadow-sm">
