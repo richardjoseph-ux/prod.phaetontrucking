@@ -7,23 +7,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function handleTracking() {
         const tripId = tripIdInput.value.trim();
-        // Use the input value, but if it's empty, default to 'N/A'
-        let drNo = drNoInput.value.trim();
-        if (drNo === '') {
-            drNo = 'N/A';
-        }
+        const drNo = drNoInput.value.trim(); // This will be "" if empty
 
-        // 1. Modified Validation: Only Trip ID is strictly required now
+        // 1. Validation: Only Trip ID is required
         if (tripId === '') {
             alert('Please enter a Trip ID.');
             return;
         }
 
-        // 2. Build the dynamic URL
-        // drNo will now be either the user input or 'N/A'
+        // 2. Build the URL
+        // If drNo is empty, the URL will end with "...&dr_no="
         const trackingUrl = `https://app.phaetontrucking.com/PublicTripTracking?trip_id=${encodeURIComponent(tripId)}&dr_no=${encodeURIComponent(drNo)}`;
         
         trackingIframe.src = trackingUrl;
+        
         appViewContainer.classList.remove('d-none');
         appViewContainer.scrollIntoView({ behavior: 'smooth' });
     }
