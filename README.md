@@ -1,2 +1,2 @@
 # uat.phaetontrucking
-UAT Website for Phaeton Trucking main website
+Website for Phaeton Trucking 
